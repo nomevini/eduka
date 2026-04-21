@@ -1,0 +1,32 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Variáveis de ambiente e segredos (backend)
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Java / Maven / Gradle (backend)
+backend/target/
+backend/out/
+backend/build/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDEs
+backend/.idea/
+*.iml
+.vscode/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+*~
