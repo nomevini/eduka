@@ -1,8 +1,9 @@
 package com.nomevini.eduka.auth;
 
-import com.nomevini.eduka.auth.dto.LoginRequestDTO;
-import com.nomevini.eduka.auth.dto.RegisterRequestDTO;
-import com.nomevini.eduka.auth.dto.TokenDTO;
+import com.nomevini.eduka.auth.dto.LoginRequest;
+import com.nomevini.eduka.auth.dto.AuthResponse;
+import com.nomevini.eduka.auth.dto.RegisterRequest;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +20,12 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<TokenDTO> login(@RequestBody LoginRequestDTO request) {
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody RegisterRequestDTO request) {
+    public ResponseEntity<Void> register(@Valid @RequestBody RegisterRequest request) {
 
         authService.register(request);
 

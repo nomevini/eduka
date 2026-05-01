@@ -11,9 +11,11 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
+@Builder
 @Table(name="tb_user")
 public class User implements Serializable {
     @Serial
